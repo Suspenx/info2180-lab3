@@ -27,4 +27,37 @@ document.addEventListener("DOMContentLoaded", function () {
         square.classList.remove("hover");
       });
     });
+  
+    // Exercise 4 - Check for Winner
+    function checkForWinner() {
+      const winningCombinations = [
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [0, 4, 8],
+        [2, 4, 6],
+      ];
+  
+      for (const combination of winningCombinations) {
+        const [a, b, c] = combination;
+        if (
+          squares[a].classList.contains("X") &&
+          squares[b].classList.contains("X") &&
+          squares[c].classList.contains("X")
+        ) {
+          document.querySelector("#status").textContent = "Congratulations! X is the Winner!";
+          document.querySelector("#status").classList.add("you-won");
+        } else if (
+          squares[a].classList.contains("O") &&
+          squares[b].classList.contains("O") &&
+          squares[c].classList.contains("O")
+        ) {
+          document.querySelector("#status").textContent = "Congratulations! O is the Winner!";
+          document.querySelector("#status").classList.add("you-won");
+        }
+      }
+    }
 
