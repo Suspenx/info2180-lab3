@@ -13,8 +13,18 @@ document.addEventListener("DOMContentLoaded", function () {
           square.classList.add(currentPlayer); // Add X or O class
           square.textContent = currentPlayer; // Display X or O
           currentPlayer = currentPlayer === "X" ? "O" : "X"; // Toggle player
-          //checkForWinner(); - need to develop this function to check for winner/combinations
+          checkForWinner(); // Check for a winner
         }
+      });
+    });
+  
+    // Exercise 3 - Mouse Hover Effects
+    squares.forEach((square) => {
+      square.addEventListener("mouseenter", function () {
+        square.classList.add("hover");
+      });
+      square.addEventListener("mouseleave", function () {
+        square.classList.remove("hover");
       });
     });
 
