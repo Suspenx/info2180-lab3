@@ -1,9 +1,9 @@
-// event handling code so that each square is styled appropriatley
-document.addEventListener('DOMContentLoaded', function() {
-   var board = document.getElementById("board") 
-   var squares = board.querySelectorAll('div')
+document.addEventListener("DOMContentLoaded", function () {
+  
+    // Exercise 1 - Styling the Squares
+    const squares = document.querySelectorAll("#board > div");
+    squares.forEach((square) => square.classList.add("square"));
+  
+   
+  });
 
-   squares.forEach(function(square){
-    square.classList.add('square')
-   })
-})
