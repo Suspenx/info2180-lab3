@@ -60,4 +60,18 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       }
     }
+  
+    // Exercise 5 - Restart the Game
+    const newGameButton = document.querySelector(".btn");
+    newGameButton.addEventListener("click", function () {
+      squares.forEach((square) => {
+        square.classList.remove("X", "O");
+        square.textContent = "";
+      });
+  
+      const status = document.querySelector("#status");
+      status.textContent = "Move your mouse over a square and click to play an X or an O.";
+      status.classList.remove("you-won");
+    });
+  });
 
